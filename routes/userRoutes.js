@@ -1,10 +1,6 @@
 const router = require('express').Router();
-<<<<<<< HEAD
 const bcrypt = require('bcrypt');
 const User = require('../components/user');
-=======
-const { User } = require('../models');
->>>>>>> bda4a75145c39d6c3327b3b87ea406160bbe942b
 
 // CREATE new user
 router.post('/', async (req, res) => {
