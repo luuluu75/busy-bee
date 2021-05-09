@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS busy_bee;
-CREATE DATABASE busy_bee;
+DROP DATABASE IF EXISTS buzy_bees;
+CREATE DATABASE buzy_bees;
 
-USE busy_bee;
+USE buzy_bees;
 
 CREATE TABLE user_profile (
     user_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -27,13 +27,13 @@ CREATE TABLE calendar_item (
     isPrivate BOOLEAN
 );
 
-CREATE TABLE item_parties (
-    item_party_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+CREATE TABLE calendar_member (
+    cal_mem_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
 	cal_id INT,
     user_id VARCHAR(140)
 );
 
 CREATE TABLE category (
 	cat_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    cat_desc VARCHAR(140)
+    cat_desc VARCHAR(30)
 );
