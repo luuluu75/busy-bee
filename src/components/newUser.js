@@ -25,14 +25,14 @@ var createUser = React.createUser({
 
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const myPlaintextPassword = { value.Password };
+const myPlaintextPassword = (this.Password);
 
 
 bcrypt.genSalt(saltRounds, function(err, salt) {
     bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
         // Store hash in your password DB.
     });
-});
+})
 //if successful --> trigger calendar.js functionality
 //if unsuccessful --> display error message 
 
