@@ -10,10 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static('app/src'));
+app.use(express.static('/App'));
 
 // Routes
-require('./src/routes/api-routes.js.js')(app);
+app.get('/',(req,res) => {
+    res.send("Hello World")
+});
+
+// require('./src/routes')(app);
 
 // Starts the server to begin listening
 app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
