@@ -1,6 +1,14 @@
 import React, { setState } from 'react';
 import Button from 'react-bootstrap/button';
 
+const express = require('express');
+
+const router = express.Router()
+
+router.get('/api', (req, res) => {
+    res.send('Post is working')
+});
+
 var loginUser = React.loginUser({ 
     handleClick: function(e) {
         console.log(this.prop);

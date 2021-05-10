@@ -1,8 +1,8 @@
-import React from 'react';
+const express = require('express');
+const router = express.Router();
+const Calendar = require('../models/Calendar')
 
-import './userLogin';
-import './newUser';
-
+app.get('/userRoutes')
 
 //default state - load userCalendar with all events added
 //call getCalendar by userId
