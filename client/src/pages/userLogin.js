@@ -5,9 +5,6 @@ const express = require('express');
 
 const router = express.Router()
 
-router.get('/api', (req, res) => {
-    res.send('Post is working')
-});
 
 var loginUser = React.loginUser({ 
     handleClick: function(e) {
@@ -15,24 +12,28 @@ var loginUser = React.loginUser({
     },
     render: function () {
         return (
-            <div id="loginUser" uk-offcanvas="mode: reveal">...</div>
+            <div id="loginUser" uk-offcanvas="mode: reveal">Login</div>
         )
     }
 })
+
+router.get('/api', (req, res) => {
+    res.send('Post is working')
+});
 //user clicks Login In --> Login screen displays
 //on click of submit --> user is authenticated
 // Load hash from your password DB.
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-const myPlaintextPassword = { target.value.password };
+// const bcrypt = require('bcrypt');
+// const saltRounds = 10;
+// const myPlaintextPassword = { target.value.password };
 
-bcrypt.compare(myPlaintextPassword, hash, function(err, result) {
-    // result == true
-});
-bcrypt.compare(someOtherPlaintextPassword, hash, function(err, result) {
-    // result == false
-});
+// bcrypt.compare(myPlaintextPassword, hash, function(err, result) {
+//     // result == true
+// });
+// bcrypt.compare(someOtherPlaintextPassword, hash, function(err, result) {
+//     // result == false
+// });
 //if successful --> trigger calendar.js functionality
 //if unsuccessful --> display error message with link to newUser.js
 

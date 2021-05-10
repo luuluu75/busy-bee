@@ -1,4 +1,4 @@
-function Home() {
+function App() {
     return (
       <div className="App">
         <header className="App-header">Buzy Bees</header>
@@ -10,4 +10,4 @@ function Home() {
     );
   }
 
-  export default Home;
+  export default App;

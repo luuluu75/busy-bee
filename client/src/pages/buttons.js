@@ -9,7 +9,6 @@ import Path from 'path';
 
 const button =
 class Button extends Component {
-    this.path {}
     this.path=('/') 
     render() {
         <Button variant="primary" size="lg">Create New Bee</Button>{' '}
