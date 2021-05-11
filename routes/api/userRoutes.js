@@ -1,25 +1,17 @@
-const router = require('express').Router();
-const bcrypt = require('bcrypt');
-const User = require('../../models/User');
+const router = require("express").Router();
+const userController = require("../../controllers/calendarItemsController");
 
-// CREATE a new user
-router.post('/', async (req, res) => {
+// Matches with "/api/user"
+router.route("/")
+  .get(userController.findAll)
+  .post(userController.create)
+  .put(userController.update);
 
-    const user = new User({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password
-    });
-
-    // hash the password from 'req.body' and save to newUser
-    user.password = await bcrypt.hash(req.body.password, 10);
-
-    // create the newUser with the hashed password and save to DB
-    const userData = await User.create(user);
-    res.status(200).json(userData)
-    catch { res.status(400).json(err)
-    }; 
-  });
-
+// Matches with "/api/user/:id"
+router
+  .route("/:id")
+  .get(userController.findById)
+  .put(userController.update)
+  .delete(userController.remove);
 
 module.exports = router;
