@@ -3,7 +3,7 @@ const sequelize = new Sequelize('sqlite::memory:');
 
 const CalendarMember = sequelize.define("calendarMember", {
     member_id: {
-        type: DataTypes.INTEGER AUTO_INCREMENT PRIMARY_KEY,
+        type: DataTypes.INTEGER, AUTO_INCREMENT, PRIMARY_KEY,
         allowNull: false
     },
     cal_id: {
