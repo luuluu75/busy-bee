@@ -1,13 +1,25 @@
-const express = require('express');
-const router = express.Router();
-const Calendar = require('../models/Calendar')
+import React from "react";
+import Calendar from "../components/Calendar/calendar";
+import "./App.css";
 
-app.get('/userRoutes')
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <div id="logo">
+            <span className="icon">date_range</span>
+            <span>
+              react<b>calendar</b>
+            </span>
+          </div>
+        </header>
+        <main>
+          <Calendar />
+        </main>
+      </div>
+    );
+  }
+}
 
-//default state - load userCalendar with all events added
-//call getCalendar by userId
-//call getCalendarItems by calendarID
-
-//if User clicks on view 'group calendar'
-//call getCalendar by userId
-//call get
+export default App;
