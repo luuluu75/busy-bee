@@ -1,5 +1,6 @@
 // Dependencies
 const express = require('express');
+require("dotenv").config();
 
 // Sets up the Express App
 const app = express();
@@ -14,7 +15,7 @@ app.use(express.static('/App'));
 
 // Routes
 app.get('/',(req,res) => {
-    res.send("Hello World")
+    res.send("Buzy Bees")
 });
 
 // require('./src/routes')(app);

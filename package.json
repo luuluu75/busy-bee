@@ -4,6 +4,7 @@
   "description": "Backend package",
   "main": "server.js",
   "dependencies": {
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "node-sass": "^6.0.0",
