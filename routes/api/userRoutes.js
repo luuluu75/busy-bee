@@ -1,17 +1,29 @@
 const router = require("express").Router();
-const userController = require("../../controllers/calendarItemsController");
+const userController = require("../../controllers/userController");
+const db = require("../../models");
 
+router.get("/createUser", (req, res) => {
+  //res.send("it works")
+    db.UserProfile
+      .create({
+        username: "mickey mouse",
+        email: "mickey@disney.com.au",
+        password: "Disney.1"
+      })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+}) 
 // Matches with "/api/user"
-router.route("/")
-  .get(userController.findAll)
-  .post(userController.create)
-  .put(userController.update);
+// router.route("/")
+//   .get(userController.findAll)
+//   .post(userController.create)
+//   .put(userController.update);
 
 // Matches with "/api/user/:id"
-router
-  .route("/:id")
-  .get(userController.findById)
-  .put(userController.update)
-  .delete(userController.remove);
+// router
+//   .route("/:id")
+//   .get(userController.findById)
+//   .put(userController.update)
+//   .delete(userController.remove);
 
 module.exports = router;
