@@ -6,7 +6,7 @@ router.get("/createUser", (req, res) => {
   //res.send("it works")
     db.UserProfile
       .create({
-        username: "mickey mouse",
+        name: "mickey mouse",
         email: "mickey@disney.com.au",
         password: "Disney.1"
       })

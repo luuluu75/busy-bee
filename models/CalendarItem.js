@@ -1,5 +1,4 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
 
 const CalendarItem = sequelize.define("calendarItem", {
     item_id: {
@@ -36,5 +35,5 @@ const CalendarItem = sequelize.define("calendarItem", {
     await sequelize.sync({ force: true });
     // Code here
   })();
-// `sequelize.define` also returns the model
-console.log(CalendarItem === sequelize.models.CalendarItem); // true
+
+  module.exports = CalendarItem;

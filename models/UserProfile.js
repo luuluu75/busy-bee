@@ -1,8 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('mysql://root:yourRootPassword@localhost:3306/buzy_bees');
 
 const UserProfile = sequelize.define("userProfile", {
-    username: {
+    name: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
@@ -15,9 +14,9 @@ const UserProfile = sequelize.define("userProfile", {
       is: /^[0-9a-f]{64}$/i
     },
 },
-  //  {
-  //       freezeTableName: true
-  //   },
+   {
+        freezeTableName: true
+    },
 );
 
   (async () => {

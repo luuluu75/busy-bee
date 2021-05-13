@@ -1,6 +1,7 @@
 // Dependencies
 const express = require('express');
 require("dotenv").config();
+const sequelize = require('./config/connection')
 const routes = require('./routes');
 
 // Sets up the Express App
@@ -23,4 +24,7 @@ app.get('/',(req,res) => {
 app.use(routes);
 
 // Starts the server to begin listening
-app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
+  

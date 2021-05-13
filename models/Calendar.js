@@ -1,7 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
 
-const Calendar = sequelize.define("calendar", {
+const Calendar = Sequelize.define("calendar", {
     cal_id: {
         type: DataTypes.INTEGER, AUTO_INCREMENT, PRIMARY_KEY,
     },
@@ -25,6 +24,6 @@ const Calendar = sequelize.define("calendar", {
 // `sequelize.define` also returns the model
 console.log(Calendar === sequelize.models.Calendar); // true
 
-
+module.exports = Calendar;
 
 
