@@ -1,6 +1,13 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 const UserProfile = sequelize.define("userProfile", {
+    user_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    allowNull: false
+},
     name: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -13,11 +20,9 @@ const UserProfile = sequelize.define("userProfile", {
       type: DataTypes.STRING(64),
       is: /^[0-9a-f]{64}$/i
     },
-},
-   {
-        freezeTableName: true
-    },
-);
+}, {
+  freezeTableName: true
+}, );
 
   (async () => {
     await sequelize.sync({ force: true });
