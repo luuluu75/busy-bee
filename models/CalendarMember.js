@@ -1,9 +1,11 @@
-const { Sequelize, DataTypes } = require('sequelize');
-// const sequelize = new Sequelize('sqlite::memory:');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 const CalendarMember = sequelize.define("calendarMember", {
     member_id: {
-        type: DataTypes.INTEGER, AUTO_INCREMENT, PRIMARY_KEY,
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
         allowNull: false
     },
     cal_id: {
@@ -11,10 +13,10 @@ const CalendarMember = sequelize.define("calendarMember", {
     },
     user_id: {
         type: DataTypes.TEXT
-    }, 
-    define: {
-        freezeTableName: true
-    }
-  });
+  },
+},
+  {
+    freezeTableName: true
+}, );
 
 module.exports = CalendarMember;

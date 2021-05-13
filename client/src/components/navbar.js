@@ -4,7 +4,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" href="/">
-       Buzy Bees
+       <h1> Buzy Bees </h1>
       </a>
     </nav>
   );

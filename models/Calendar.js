@@ -1,8 +1,12 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-const Calendar = Sequelize.define("calendar", {
+const Calendar = sequelize.define("calendar", {
     cal_id: {
-        type: DataTypes.INTEGER, AUTO_INCREMENT, PRIMARY_KEY,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false        
     },
     cal_name: {
       type: DataTypes.TEXT,
@@ -12,17 +16,9 @@ const Calendar = Sequelize.define("calendar", {
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    define: {
-        freezeTableName: true
-    }
-  });
-
-  (async () => {
-    await sequelize.sync({ force: true });
-    // Code here
-  })();
-// `sequelize.define` also returns the model
-console.log(Calendar === sequelize.models.Calendar); // true
+  }, {
+    freezeTableName: true
+}, );
 
 module.exports = Calendar;
 

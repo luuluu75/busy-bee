@@ -1,18 +1,15 @@
 import React from 'react';
 import './App.css';
-import '../public/images';
-import './pages/newUser';
-import './pages/userLogin';
-import './pages/calendar';
+import NewUser from "./pages/NewUser";
+import Nav from "./components/navbar";
 
-const express = require('express');
-const app = express();
-const sequelize = require('sequelize');
+const App = () => {
+    return (
+        <div>
+          <Nav />  
+        </div>
+    )
+}
+//switch to navigate between pages
+export default App
 
-// const Routes = require('../api');
-
-// app.use('/api', Routes);
-
-
-
-export default app;

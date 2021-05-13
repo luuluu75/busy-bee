@@ -1,8 +1,11 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 const CalendarItem = sequelize.define("calendarItem", {
     item_id: {
-        type: DataTypes.INTEGER, AUTO_INCREMENT, PRIMARY_KEY,
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
         allowNull: false
     },
     item_cat: {
@@ -24,16 +27,10 @@ const CalendarItem = sequelize.define("calendarItem", {
         type: DataTypes.INTEGER
     },
     isPrivate: {
-        type: DataTyps.BOOLEAN
-    }, 
-    define: {
-        freezeTableName: true
-    }
-  });
-
-  (async () => {
-    await sequelize.sync({ force: true });
-    // Code here
-  })();
+        type: DataTypes.BOOLEAN
+    },
+}, {
+    freezeTableName: true
+}, );
 
   module.exports = CalendarItem;
