@@ -1,5 +1,6 @@
 module.exports = {
     UserProfile: require("./UserProfile"),
-    //Calender: require("./UserProfile"),
-  };
-  
+    Calendar: require("./Calendar"),
+    CalendarItem: require("./CalendarItem"),
+    CalendarMember: require("./CalendarMember")
+}
