@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Calendar from './calendar/index';
+import "./utils/tailwind.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Calendar />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-
 

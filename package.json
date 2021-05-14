@@ -1,34 +1,17 @@
 {
-  "name": "buzy-bees",
+  "name": "startover",
   "version": "1.0.0",
-  "description": "Backend package",
-  "main": "server.js",
-  "dependencies": {
-    "date-fns": "^2.21.3",
-    "dotenv": "^9.0.2",
-    "express": "^4.17.1",
-    "mysql2": "^2.2.5",
-    "node-sass": "^6.0.0",
-    "nodemon": "^2.0.7",
-    "pg-hstore": "^2.3.3",
-    "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0",
-    "sqlite3": "^5.0.2",
-    "web-vitals": "^1.1.2"
-  },
-  "devDependencies": {},
+  "description": "",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luuluu75/buzy-bees.git"
+    "start": "nodemon backend/server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/luuluu75/buzy-bees/issues"
-  },
-  "homepage": "https://github.com/luuluu75/buzy-bees#readme"
+  "dependencies": {
+    "dotenv": "^9.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.6.2"
+  }
 }
