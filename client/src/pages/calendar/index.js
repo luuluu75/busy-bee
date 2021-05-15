@@ -1,6 +1,8 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import { format, isSameMonth, isSameDay} from "date-fns";
-import { takeMonth } from "../modules/Calendar";
+import { takeMonth } from "../../modules/Calendar";
+import DaySchedule from "../../modules/DaySchedule";
+import axios from "axios";
 
 
 function GetWeek() {
@@ -29,6 +31,13 @@ export default function Calendar() {
    const [selectedDate, setSelectedDate] = useState(new Date());
    const data = takeMonth(selectedDate)();
 
+   useEffect(() => {
+      axios.get("http://localhost:3000/api/calendarItems")
+      .then(response => {
+         console.log(response)
+      }  
+      )}, [])
+
    function dayColor(day) {
       if(!isSameMonth(day, selectedDate)) return "text-gray-400";
       if(isSameDay(day, selectedDate)) return "bg-green-400";
@@ -41,6 +50,7 @@ export default function Calendar() {
    }
 
    return (
+      <div className={"flex"}>
       <div className = {"bg-white box-border m-8 flex"}>
             <div className = {"border rounded-xl p-2"}>
                <h1 className="flex w-full items-center justify-center font-extrabold mb-2 tracking-wider">
@@ -61,6 +71,9 @@ export default function Calendar() {
                </div>     
                ))} 
          </div>
+     </div>
+     <div><DaySchedule />
+     </div>
      </div>
    );
 }

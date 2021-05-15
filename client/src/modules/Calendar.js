@@ -11,6 +11,7 @@ export function takeWeek(start = new Date()) {
     };
 }
 
+
 export function takeMonth(start = new Date()){
     let month = [];
     let date = start;
