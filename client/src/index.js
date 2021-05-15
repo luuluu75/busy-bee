@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Calendar from './calendar/index';
+import App from './App';
+// import {takeDay} from './pages/scheduler/index';
 import "./utils/tailwind.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calendar />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
