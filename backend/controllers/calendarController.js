@@ -1,10 +1,9 @@
 const db = require("../models");
 
-// Defining methods for the booksController
+// Defining methods for the Calendar
 module.exports = {
   findAll: function(req, res) {
     db.Calendar
-      .findById(req.query)//find by userId
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

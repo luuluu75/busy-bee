@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-const CalendarItem = sequelize.define("calendarItem", {
-    item_id: {
+const CalendarItem = sequelize.define("CalendarItem", {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -30,7 +30,8 @@ const CalendarItem = sequelize.define("calendarItem", {
         type: DataTypes.BOOLEAN
     },
 }, {
-    freezeTableName: true
+    freezeTableName: true,
+    timestamps: false
 }, );
 
   module.exports = CalendarItem;

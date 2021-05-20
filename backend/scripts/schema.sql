@@ -19,6 +19,7 @@ CREATE TABLE calendar (
 CREATE TABLE calendar_item (
 	item_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     item_cat VARCHAR(100),
+    item_title VARCHAR,
     item_desc TEXT,
     item_date DATE,
     item_time INT,

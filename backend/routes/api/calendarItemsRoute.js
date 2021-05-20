@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const calendarItemsController = require("../../controllers/calendarItemsController");
+const calendarItemsController = require("../../controllers/calendarItemController");
 
 // Matches with "/api/calendarItems"
 router.route("/")

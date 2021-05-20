@@ -17,7 +17,8 @@ const Calendar = sequelize.define("calendar", {
         allowNull: false
     },
   }, {
-    freezeTableName: true
+    freezeTableName: true,
+    timestamps: false
 }, );
 
 module.exports = Calendar;

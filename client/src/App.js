@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./pages/home/index";
-import Calendar from "./pages/calendar/index";
+import CalendarView from "./pages/calendarView/index";
+import DayView from "./pages/dayView/index";
+import Homepage from "./pages/home/index"
 // import Login  from "./pages/login/index";
 // import Nav from "./components/Nav";
 
@@ -11,14 +12,14 @@ function App() {
       <div>
         {/* <Nav /> */}
         <Switch>
-          <Route exact path={["/calendar", "/calendar/:id"]}>
-            <Calendar />
+          <Route exact path={["/calendar-month"]}>
+            <CalendarView />
           </Route>
-          {/* <Route exact path={["/calendarItem", "/calendarItem/:id"]}>
-            <Login />
-          </Route> */}
+          <Route exact path="/date/:date">
+          <DayView />
+          </Route>
           <Route exact path={["/"]}>
-            <Home />
+            <Homepage />
           </Route>
         </Switch>
       </div>
