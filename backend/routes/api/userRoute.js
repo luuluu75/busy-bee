@@ -10,10 +10,10 @@ router.get("/createUser", (req, res) => {
       .catch(err => res.status(422).json(err));
 }) 
 // Matches with "/api/user"
-// router.route("/")
-//   .get(userController.findAll)
-//   .post(userController.create)
-//   .put(userController.update);
+router.route("/")
+  .get(userController.findAll)
+  .post(userController.create)
+  .put(userController.update);
 
 // Matches with "/api/user/:id"
 // router

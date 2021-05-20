@@ -16,7 +16,8 @@ const CalendarMember = sequelize.define("calendarMember", {
   },
 },
   {
-    freezeTableName: true
+    freezeTableName: true,
+    timestamps: false
 }, );
 
 module.exports = CalendarMember;
